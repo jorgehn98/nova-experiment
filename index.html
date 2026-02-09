@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOVA — Digital Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Scroll progress -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <span class="cursor-text">View</span>
+  </div>
+
+  <!-- Loader (enhanced) -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <h2 class="loader-title">NOVA</h2>
+      <div class="loader-meta">
+        <div class="loader-bar">
+          <div class="loader-progress"></div>
+        </div>
+        <span class="loader-percent">0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section nav dots -->
+  <nav class="section-nav" id="section-nav" aria-hidden="true">
+    <button class="section-dot active" data-target="hero"></button>
+    <button class="section-dot" data-target="about"></button>
+    <button class="section-dot" data-target="work"></button>
+    <button class="section-dot" data-target="stats"></button>
+    <button class="section-dot" data-target="contact"></button>
+  </nav>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo magnetic" data-strength="0.15">NOVA</a>
+    <div class="nav-links">
+      <a href="#work" class="nav-link magnetic" data-strength="0.2">Work</a>
+      <a href="#about" class="nav-link magnetic" data-strength="0.2">About</a>
+      <a href="#contact" class="nav-link magnetic" data-strength="0.2">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="section hero" id="hero">
+      <canvas id="particle-canvas"></canvas>
+      <div class="hero-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-title" data-split-chars>NOVA</h1>
+        <p class="hero-subtitle" data-scramble>Digital experiences beyond reality</p>
+      </div>
+      <div class="rotating-badge" aria-hidden="true">
+        <svg viewBox="0 0 200 200" width="140" height="140">
+          <defs>
+            <path id="circlePath" d="M 100,100 m -70,0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"/>
+          </defs>
+          <text fill="currentColor" font-size="12.5" letter-spacing="5" font-family="Inter, sans-serif">
+            <textPath href="#circlePath">NOVA STUDIO &#8226; DIGITAL CRAFT &#8226; </textPath>
+          </text>
+        </svg>
+      </div>
+      <div class="scroll-indicator">
+        <span class="scroll-text">Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <div class="divider"><div class="divider-line"></div></div>
+
+    <!-- Manifesto -->
+    <section class="section manifesto" id="about">
+      <div class="container">
+        <span class="section-label">Philosophy</span>
+        <p class="manifesto-text">
+          We craft digital experiences at the intersection of design and technology. Where every interaction is deliberate. Every transition, purposeful. We don't just build websites — we engineer worlds that challenge perception and redefine what's possible in the browser.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"><div class="divider-line"></div></div>
+
+    <!-- Work (horizontal scroll) -->
+    <section class="section work-section" id="work">
+      <div class="container work-header">
+        <span class="section-label">Selected Work</span>
+        <span class="work-count">04 Projects</span>
+      </div>
+      <div class="work-slider">
+        <div class="work-track">
+          <article class="work-card" data-cursor="view">
+            <div class="work-card-image grad-1">
+              <span class="work-card-number">00</span>
+              <div class="work-card-overlay"></div>
+            </div>
+            <div class="work-card-info">
+              <h3 class="work-card-title">Aurora</h3>
+              <span class="work-card-cat">Interactive Experience</span>
+            </div>
+          </article>
+          <article class="work-card" data-cursor="view">
+            <div class="work-card-image grad-2">
+              <span class="work-card-number">00</span>
+              <div class="work-card-overlay"></div>
+            </div>
+            <div class="work-card-info">
+              <h3 class="work-card-title">Meridian</h3>
+              <span class="work-card-cat">Brand Platform</span>
+            </div>
+          </article>
+          <article class="work-card" data-cursor="view">
+            <div class="work-card-image grad-3">
+              <span class="work-card-number">00</span>
+              <div class="work-card-overlay"></div>
+            </div>
+            <div class="work-card-info">
+              <h3 class="work-card-title">Void</h3>
+              <span class="work-card-cat">Web Experience</span>
+            </div>
+          </article>
+          <article class="work-card" data-cursor="view">
+            <div class="work-card-image grad-4">
+              <span class="work-card-number">00</span>
+              <div class="work-card-overlay"></div>
+            </div>
+            <div class="work-card-info">
+              <h3 class="work-card-title">Pulse</h3>
+              <span class="work-card-cat">Digital Campaign</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee (dual) -->
+    <section class="section marquee-section">
+      <div class="marquee">
+        <div class="marquee-track marquee-forward">
+          <span class="marquee-item">DESIGN &mdash; CODE &mdash; MOTION &mdash; EXPERIENCE &mdash;&nbsp;</span>
+          <span class="marquee-item">DESIGN &mdash; CODE &mdash; MOTION &mdash; EXPERIENCE &mdash;&nbsp;</span>
+          <span class="marquee-item">DESIGN &mdash; CODE &mdash; MOTION &mdash; EXPERIENCE &mdash;&nbsp;</span>
+          <span class="marquee-item">DESIGN &mdash; CODE &mdash; MOTION &mdash; EXPERIENCE &mdash;&nbsp;</span>
+        </div>
+      </div>
+      <div class="marquee">
+        <div class="marquee-track marquee-reverse">
+          <span class="marquee-item outline">STRATEGY &mdash; IDENTITY &mdash; SYSTEMS &mdash; CRAFT &mdash;&nbsp;</span>
+          <span class="marquee-item outline">STRATEGY &mdash; IDENTITY &mdash; SYSTEMS &mdash; CRAFT &mdash;&nbsp;</span>
+          <span class="marquee-item outline">STRATEGY &mdash; IDENTITY &mdash; SYSTEMS &mdash; CRAFT &mdash;&nbsp;</span>
+          <span class="marquee-item outline">STRATEGY &mdash; IDENTITY &mdash; SYSTEMS &mdash; CRAFT &mdash;&nbsp;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section stats" id="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number" data-target="147">0</span>
+            <span class="stat-label">Projects Delivered</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="12">0</span>
+            <span class="stat-label">Awards Won</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="23">0</span>
+            <span class="stat-label">Countries</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="8">0</span>
+            <span class="stat-label">Years Active</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"><div class="divider-line"></div></div>
+
+    <!-- Footer -->
+    <footer class="section footer" id="contact">
+      <div class="footer-glow" aria-hidden="true"></div>
+      <div class="container footer-content">
+        <span class="section-label">Next Step</span>
+        <h2 class="footer-title">
+          <span class="line">Let's create</span>
+          <span class="line">something</span>
+          <span class="line accent">extraordinary</span>
+        </h2>
+        <a href="mailto:hello@nova.studio" class="footer-cta magnetic" data-strength="0.35">
+          <span class="footer-cta-inner">
+            <span>hello@nova.studio</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 NOVA Studio</span>
+        <span>Experimental Project</span>
+      </div>
+    </footer>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
